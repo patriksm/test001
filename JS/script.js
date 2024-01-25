@@ -39,6 +39,11 @@ function direction() {
 	if(event.keyCode == 40 && dir != "up"){
 		dir = "down"
 	}
+
+	//restartēšanas poga
+	if (event.keyCode == 82) {
+		location.reload()
+	}
 }
 
 function isColliding(jaunaGalva, cuska){
@@ -64,7 +69,8 @@ function drawGame() {
 	let snakeY = snake[0].y;
 	
 	for(let i = 0; i < snake.length; i++){
-		ctx.fillStyle = (i == 0) ? "red" : "blue"; 
+		//pirmais krāsu minējums nosaka galvas krāsu, otrais krāsu minējums nosaka ķermeni
+		ctx.fillStyle = (i == 0) ? "yellow" : "green"; 
 		ctx.fillRect(snake[i].x, snake[i].y, box, box); 
 		// if(i == 0){
 		// 	ctx.drawImage(foodImg, snake[i].x, snake[i].y);
