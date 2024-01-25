@@ -24,5 +24,9 @@ button {
 }
 button:hover{
     background-color: rgb(162, 255, 0);
-    color: rgb(43, 68, 0);
+    color: rgb(163, 163, 163);
+}
+
+p {
+    color: white;
 }

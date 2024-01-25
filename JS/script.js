@@ -16,10 +16,24 @@ let food = {
 	y: (Math.floor(15*Math.random())+3)*box
 }
 
+
+var gameEnd = false
+
+let highScore = localStorage.getItem("HighScore")
+
 let snake = []
 snake[0] = {
 	x: 9*box,
 	y: 10*box
+}
+
+function restartGame() {
+	if (gameEnd) {
+		if (score>highScore) {
+			localStorage.setItem("HighScore", score)
+		}
+		location.reload()
+	}
 }
 
 document.addEventListener("keydown", direction);
@@ -42,9 +56,12 @@ function direction( event ) {
 		dir = "down"
 	}
 
-	//restartēšanas poga
+	//restartēšanas pogas
 	if (key == 'r') {
 		location.reload()
+	}
+	if (event.keyCode == 32) {
+		restartGame()
 	}
 }
 
@@ -52,11 +69,13 @@ function isColliding(jaunaGalva, cuska){
 	for(i=0; i<cuska.length; i++){
 		if(jaunaGalva.x == cuska[i].x && jaunaGalva.y == cuska[i].y){
 			clearInterval(game);
+			gameEnd = true
 		}
 	}
 	//sienas
 	if(jaunaGalva.x <= 0*box || jaunaGalva.x >= 18*box || jaunaGalva.y <= 2*box || jaunaGalva.y >= 18*box){
 		clearInterval(game);
+		gameEnd = true
 	}
 }
 
@@ -65,7 +84,7 @@ function drawGame() {
 	ctx.drawImage(foodImg, food.x, food.y);
 	ctx.fillStyle = "yellow";
 	ctx.font = "40px Arial";
-	ctx.fillText("Score: " + score , 2.5*box, 1.65*box);
+	ctx.fillText("Score: " + score + "  High Score: " + highScore, 2*box, 2*box);
 	
 	let snakeX = snake[0].x;
 	let snakeY = snake[0].y;
