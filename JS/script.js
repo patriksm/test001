@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 const lauks = document.getElementById("spl");
 const ctx = lauks.getContext("2d");
 
