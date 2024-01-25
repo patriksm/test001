@@ -26,22 +26,24 @@ document.addEventListener("keydown", direction);
 
 let dir;
 
-function direction() {
-	if(event.keyCode == 37 && dir != "right"){
+function direction( event ) {
+	let key = event.key.toLowerCase()
+
+	if( ( key == 'a' || key == 'arrowleft' ) && dir != "right"){
 		dir = "left"
 	}
-	if(event.keyCode == 39 && dir != "left"){
+	if( ( key == 'd' || key == 'arrowright' ) && dir != "left"){
 		dir = "right"
 	}
-	if(event.keyCode == 38 && dir != "down"){
+	if( ( key == 'w' || key == 'arrowup' ) && dir != "down"){
 		dir = "up"
 	}
-	if(event.keyCode == 40 && dir != "up"){
+	if( ( key == 's' || key == 'arrowdown' ) && dir != "up"){
 		dir = "down"
 	}
 
 	//restartēšanas poga
-	if (event.keyCode == 82) {
+	if (key == 'r') {
 		location.reload()
 	}
 }
