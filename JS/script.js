@@ -65,11 +65,12 @@ function drawGame() {
 	
 	for(let i = 0; i < snake.length; i++){
 		ctx.fillStyle = (i == 0) ? "red" : "blue"; 
-		if(i == 0){
-			ctx.drawImage(foodImg, snake[i].x, snake[i].y);
-		} else {
-			ctx.fillRect(snake[i].x, snake[i].y, box, box); 
-		}
+		ctx.fillRect(snake[i].x, snake[i].y, box, box); 
+		// if(i == 0){
+		// 	ctx.drawImage(foodImg, snake[i].x, snake[i].y);
+		// } else {
+		// 	ctx.fillRect(snake[i].x, snake[i].y, box, box); 
+		// }
 	}
 	
 	if(snakeX == food.x && snakeY == food.y){
