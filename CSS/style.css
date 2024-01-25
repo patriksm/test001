@@ -23,6 +23,6 @@ button {
     transition-duration: 0.1s;
 }
 button:hover{
-    background-color: #ffffff;
+    background-color: #2C8000;
     color: rgb(163, 163, 163);
 }
