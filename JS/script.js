@@ -56,7 +56,7 @@ function isColliding(jaunaGalva, cuska){
 function drawGame() {
 	ctx.drawImage(ground, 0, 0);
 	ctx.drawImage(foodImg, food.x, food.y);
-	ctx.fillStyle = "white";
+	ctx.fillStyle = "red";
 	ctx.font = "40px Arial";
 	ctx.fillText("Score: " + score , 2*box, 2*box);
 	
