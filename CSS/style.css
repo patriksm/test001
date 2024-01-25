@@ -26,3 +26,7 @@ button:hover{
     background-color: #2C8000;
     color: rgb(163, 163, 163);
 }
+
+p {
+    color: white;
+}
