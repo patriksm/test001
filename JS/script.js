@@ -63,7 +63,7 @@ function drawGame() {
 	ctx.drawImage(foodImg, food.x, food.y);
 	ctx.fillStyle = "red";
 	ctx.font = "40px Arial";
-	ctx.fillText("Score: " + score , 2*box, 2*box);
+	ctx.fillText("Score: " + score , 2.5*box, 1.65*box);
 	
 	let snakeX = snake[0].x;
 	let snakeY = snake[0].y;
