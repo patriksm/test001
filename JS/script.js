@@ -61,9 +61,12 @@ function direction( event ) {
 	}
 
 	//restartēšanas pogas
+	//Pilnīga restartēšana (restartē arī highscore)
 	if (key == 'r') {
 		location.reload()
+		localStorage.setItem("HighScore", 0)
 	}
+	//Spēles restartēšanas poga
 	if (event.keyCode == 32) {
 		restartGame()
 	}
