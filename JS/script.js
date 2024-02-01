@@ -21,6 +21,10 @@ var gameEnd = false
 
 let highScore = localStorage.getItem("HighScore")
 
+if (localStorage.getItem("HighScore") === isFinite) {
+	localStorage.setItem("HighScore", 0)
+}
+
 let snake = []
 snake[0] = {
 	x: 9*box,
